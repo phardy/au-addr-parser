@@ -1,1 +1,1 @@
-from .addr_parser import AbAddressUtility, standardise_address
+from .addr_parser import AbAddressUtility, ShortAddressUtility, standardise_address
