@@ -95,15 +95,24 @@ def test_short_unit():
                                       locality='stanmore', state='NSW',
                                       post='2048')
     unit_helper(address_cls)
+    address_locality_cls = ShortAddressUtility('Unit 2 42-44 Example St, Stanmore',
+                                               state='NSW', post='2048')
+    unit_helper(address_locality_cls)
 
 def test_short_house():
-    address_cls = ShortAddressUtility('22 Example ST',
+    address_cls = ShortAddressUtility('22 Example St',
                                       locality='stanmore', state='NSW',
                                       post='2048')
     house_helper(address_cls)
+    address_locality_cls = ShortAddressUtility('22 Example St, Stanmore',
+                                               state='NSW', post='2048')
+    house_helper(address_locality_cls)
 
 def test_short_special():
     address_cls = ShortAddressUtility('22 Example ST west',
                                       locality='stanmore', state='NSW',
                                       post='2048')
     special_helper(address_cls)
+    address_locality_cls = ShortAddressUtility('22 Example ST west, Stanmore',
+                                               state='NSW', post='2048')
+    special_helper(address_locality_cls)

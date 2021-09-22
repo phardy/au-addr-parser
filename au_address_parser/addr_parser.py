@@ -369,8 +369,11 @@ class AbAddressUtility(object):
         return f"<AbAddressUtility(addr_string='{self.addr_string}')>"
 
 class ShortAddressUtility(AbAddressUtility):
-    def __init__(self, addr_string, locality, state, post):
-        full_addr = f"{addr_string}, {locality}, {state} {post}"
+    def __init__(self, addr_string, state, post, locality=None):
+        if locality:
+            full_addr = f"{addr_string}, {locality}, {state} {post}"
+        else:
+            full_addr = f"{addr_string}, {state} {post}"
         super().__init__(full_addr)
 
 def standardise_address(address_string):
